@@ -1,8 +1,9 @@
 import React from 'react';
-import './App.css';
 
 function App() {
-  return <div className="App">ajenda app</div>;
+  return (
+    <h1 className="text-3xl font-bold m-20">ajenda</h1>
+  );
 }
 
 export default App;
