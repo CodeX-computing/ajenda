@@ -1,8 +1,16 @@
 import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Home from './components/Home';
+import Signin from './components/Signin';
 
 function App() {
   return (
-    <h1 className="text-3xl font-bold m-20">ajenda</h1>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/signin" element={<Signin />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
