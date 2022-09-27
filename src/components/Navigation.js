@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import logo from '../logo.png';
 
 function Navigation() {
   const [isOpened, setIsOpened] = useState(false);
@@ -12,7 +13,8 @@ function Navigation() {
     }
   };
   return (
-    <nav className="">
+    <nav className="flex justify-between items-center">
+      <img src={logo} alt="logo" className="logo h-16" />
       <ul className={`sm:${isOpened ? '-translate-x-0' : '-translate-y-full translate-x-full'} duration-500 flex flex-col absolute lg:static bg-gray-800 lg:bg-gray-700/0 backdrop-blur-50 text-white lg:text-gray-900 p-32 lg:p-4 top-0 bottom-10 right-0 rounded-bl-full lg:rounded-none justify-start lg:justify-end items-start lg:flex-row lg:translate-x-0`}>
         <li className="text-2xl p-2 mx-1 my-1 lg:my-0 hover:bg-gray-600 lg:hover:bg-gray-100 rounded-md">
           <Link to="/features">Features</Link>
