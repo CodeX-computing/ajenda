@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import logo from '../logo1.png';
 
 function Signin() {
@@ -24,9 +25,9 @@ function Signin() {
         <p className="m-4">
           Don&apos;t have account?
           {' '}
-          <a className="underline text-orange-900" href="/signup">
-            Sign-up
-          </a>
+          <Link to="/signup" className="underline text-orange-900">
+            Sign up
+          </Link>
         </p>
       </section>
     </div>
