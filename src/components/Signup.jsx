@@ -8,7 +8,7 @@ function Signup() {
     alert('The form was submitted with the following data:');
   };
   return (
-    <div className="absolute mt-20 top-0 bottom-0 left-0 right-0 flex flex-col justify-start items-center bg-[url('https://media.istockphoto.com/photos/to-do-list-on-notebook-over-pastel-blue-background-picture-id1145063957?k=6&m=1145063957&s=170667a&w=0&h=lmt1DfMLf3SNwvBP9sC7DQTsb527-_xldf7IqtdoPM0=')] bg-cover bg-center backdrop-opacity-10">
+    <div className="absolute mt-20 top-0 bottom-0 left-0 right-0 flex flex-col justify-start items-center bg-loginBg bg-cover bg-center backdrop-opacity-10">
       <div className="backdrop-blur-md w-full h-full absolute" />
       <img className="w-40 m-4 mt-20 backdrop-opacity-0" src={logo} alt="logo" />
       <section className="flex flex-col bg-gray-200/60 rounded-xl p-10 shadow-2xl backdrop-opacity-40">

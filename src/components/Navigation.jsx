@@ -14,7 +14,9 @@ function Navigation() {
   };
   return (
     <nav className="z-10 flex justify-between items-center">
-      <img src={logo} alt="logo" className="logo h-16" />
+      <Link to="/">
+        <img src={logo} alt="logo" className="logo h-16" />
+      </Link>
       <ul className={`sm:${isOpened ? '-translate-x-0' : '-translate-y-full translate-x-full'} duration-300 flex flex-col absolute lg:static bg-gray-800 lg:bg-gray-700/0 backdrop-blur-50 text-white lg:text-gray-900 p-32 lg:p-4 top-0 bottom-10 right-0 rounded-bl-full lg:rounded-none justify-start lg:justify-end items-start lg:flex-row lg:translate-x-0 z-10`}>
         <li className="text-xl p-2 mx-1 my-1 lg:my-0 hover:bg-gray-600 lg:hover:bg-gray-100 rounded-md">
           <Link to="/features" onClick={() => toggleMenu(!isOpened)}>
