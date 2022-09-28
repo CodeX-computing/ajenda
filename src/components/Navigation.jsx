@@ -16,19 +16,19 @@ function Navigation() {
     <nav className="flex justify-between items-center">
       <img src={logo} alt="logo" className="logo h-16" />
       <ul className={`sm:${isOpened ? '-translate-x-0' : '-translate-y-full translate-x-full'} duration-500 flex flex-col absolute lg:static bg-gray-800 lg:bg-gray-700/0 backdrop-blur-50 text-white lg:text-gray-900 p-32 lg:p-4 top-0 bottom-10 right-0 rounded-bl-full lg:rounded-none justify-start lg:justify-end items-start lg:flex-row lg:translate-x-0`}>
-        <li className="text-2xl p-2 mx-1 my-1 lg:my-0 hover:bg-gray-600 lg:hover:bg-gray-100 rounded-md">
+        <li className="text-xl p-2 mx-1 my-1 lg:my-0 hover:bg-gray-600 lg:hover:bg-gray-100 rounded-md">
           <Link to="/features">Features</Link>
         </li>
-        <li className="text-2xl p-2 mx-1 my-1 lg:my-0 hover:bg-gray-600 lg:hover:bg-gray-100 rounded-md">
+        <li className="text-xl p-2 mx-1 my-1 lg:my-0 hover:bg-gray-600 lg:hover:bg-gray-100 rounded-md">
           <Link to="/tutorial">How it works</Link>
         </li>
-        <li className="text-2xl p-2 mx-1 my-1 lg:my-0 hover:bg-gray-600 lg:hover:bg-gray-100 rounded-md">
+        <li className="text-xl p-2 mx-1 my-1 lg:my-0 hover:bg-gray-600 lg:hover:bg-gray-100 rounded-md">
           <Link to="/about">About us</Link>
         </li>
-        <li className="text-2xl p-2 mx-1 my-1 lg:my-0 hover:bg-gray-600 lg:hover:bg-gray-100 rounded-md">
+        <li className="text-xl p-2 mx-1 my-1 lg:my-0 hover:bg-gray-600 lg:hover:bg-gray-100 rounded-md">
           <Link to="/signin">Sign in</Link>
         </li>
-        <li className="text-2xl p-2 mx-1 my-1 lg:my-0 hover:bg-gray-600 text-gray-100 bg-orange-700 rounded-md shadow-md">
+        <li className="text-xl p-2 mx-1 my-1 lg:my-0 hover:bg-gray-600 text-gray-100 bg-orange-700 rounded-md shadow-md">
           <Link to="/signup">Start for free</Link>
         </li>
       </ul>
