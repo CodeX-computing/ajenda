@@ -8,9 +8,9 @@ function Signup() {
     alert('The form was submitted with the following data:');
   };
   return (
-    <div className="absolute mt-20 top-0 bottom-0 left-0 right-0 flex flex-col justify-start items-center bg-loginBg bg-cover bg-center backdrop-opacity-10">
+    <div className="absolute top-0 bottom-0 left-0 right-0 flex flex-col justify-start items-center bg-loginBg bg-cover bg-center backdrop-opacity-10">
       <div className="backdrop-blur-md w-full h-full absolute" />
-      <img className="w-40 m-4 mt-20 backdrop-opacity-0" src={logo} alt="logo" />
+      <img className="w-40 m-4 mt-40 backdrop-opacity-0" src={logo} alt="logo" />
       <section className="flex flex-col bg-gray-200/60 rounded-xl p-10 shadow-2xl backdrop-opacity-40">
         <h1 className="font-bold text-2xl">Create new account</h1>
         <form className="flex flex-col mt-4" onSubmit={(e) => handlSubmit(e)}>
