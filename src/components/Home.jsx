@@ -5,12 +5,12 @@ import heroImg from '../assets/img/hero.webp';
 function Home() {
   return (
     <div className="home">
-      <header className="bg-heroBg bg-cover bg-center">
+      <header className="bg-heroBg bg-cover bg-center pt-20">
         <div className="overflow-hidden w-full h-full flex flex-col justify-start items-center bg-gradient-to-b from-transparent to-white backdrop-blur-md">
           <h1 className="text-4xl font-bold text-center p-4 mt-20 leading-10">
-            Organize your work
+            Organize your work and life,
             <br />
-            and life, one task at a time.
+            one task at a time.
           </h1>
           <p className="p-2 text-xl text-center">
             Manage your tasks and projects,
