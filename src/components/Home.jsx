@@ -26,44 +26,44 @@ function Home() {
         </div>
       </header>
       <main>
-        <div className="w-5/6 lg:w-3/5 m-auto flex flex-col justify-center items-center">
+        <div className="md:w-5/6 lg:w-3/5 m-auto flex flex-col justify-center items-center">
           {/* Section one */}
-          <section className="w-full flex flex-col lg:flex-row lg:justify-between justify-center items-center m-4 lg:m-10">
-            <article className="w-1/2 lg:w-1/3 mt-10">
+          <section className="flex flex-col lg:flex-row lg:justify-between justify-center items-center m-4 lg:m-10">
+            <article className="md:w-1/2 lg:w-1/3 mt-10">
               <h2 className="p-2 text-3xl font-bold text-center lg:text-left">Organize your work</h2>
               <p className="p-2 text-md text-center lg:text-left">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eligendi accusamus in consequatur dolores enim praesentium minus repudiandae exercitationem, magnam ipsum voluptas distinctio iusto doloremque officiis magni voluptate. Eum, et. Porro?</p>
             </article>
-            <article className="w-1/2 lg:w-1/3 mt-10">
+            <article className="md:w-1/2 lg:w-1/3 mt-10">
               <img className="rounded-xl border" src={heroImg} alt="home one" />
             </article>
           </section>
           {/* Section two */}
           <section className="flex flex-col lg:flex-row-reverse lg:justify-between justify-center items-center m-4 lg:m-10">
-            <article className="w-1/2 lg:w-1/3 mt-10">
+            <article className="md:w-1/2 lg:w-1/3 mt-10">
               <h2 className="p-2 text-3xl font-bold text-center lg:text-left">Organize your work</h2>
               <p className="p-2 text-md text-center lg:text-left">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eligendi accusamus in consequatur dolores enim praesentium minus repudiandae exercitationem, magnam ipsum voluptas distinctio iusto doloremque officiis magni voluptate. Eum, et. Porro?</p>
             </article>
-            <article className="w-1/2 lg:w-1/3 mt-10">
+            <article className="md:w-1/2 lg:w-1/3 mt-10">
               <img className="rounded-xl border" src={heroImg} alt="home one" />
             </article>
           </section>
           {/* Section three */}
           <section className="flex flex-col lg:flex-row lg:justify-between justify-center items-center m-4 lg:m-10">
-            <article className="w-1/2 lg:w-1/3 mt-10">
+            <article className="md:w-1/2 lg:w-1/3 mt-10">
               <h2 className="p-2 text-3xl font-bold text-center lg:text-left">Organize your work</h2>
               <p className="p-2 text-md text-center lg:text-left">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eligendi accusamus in consequatur dolores enim praesentium minus repudiandae exercitationem, magnam ipsum voluptas distinctio iusto doloremque officiis magni voluptate. Eum, et. Porro?</p>
             </article>
-            <article className="w-1/2 lg:w-1/3 mt-10">
+            <article className="md:w-1/2 lg:w-1/3 mt-10">
               <img className="rounded-xl border" src={heroImg} alt="home one" />
             </article>
           </section>
           {/* Section foor */}
           <section className="flex flex-col lg:flex-row-reverse lg:justify-between justify-center items-center m-4 lg:m-10">
-            <article className="w-1/2 lg:w-1/3 mt-10">
+            <article className="md:w-1/2 lg:w-1/3 mt-10">
               <h2 className="p-2 text-3xl font-bold text-center lg:text-left">Organize your work</h2>
               <p className="p-2 text-md text-center lg:text-left">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eligendi accusamus in consequatur dolores enim praesentium minus repudiandae exercitationem, magnam ipsum voluptas distinctio iusto doloremque officiis magni voluptate. Eum, et. Porro?</p>
             </article>
-            <article className="w-1/2 lg:w-1/3 mt-10">
+            <article className="md:w-1/2 lg:w-1/3 mt-10">
               <img className="rounded-xl border" src={heroImg} alt="home one" />
             </article>
           </section>
