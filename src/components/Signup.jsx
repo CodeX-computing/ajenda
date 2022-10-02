@@ -5,7 +5,6 @@ import logo from '../logo1.png';
 function Signup() {
   const handlSubmit = (e) => {
     e.preventDefault();
-    alert('The form was submitted with the following data:');
   };
   return (
     <div className="absolute top-0 bottom-0 left-0 right-0 flex flex-col justify-start items-center bg-loginBg bg-cover bg-center backdrop-opacity-10">
