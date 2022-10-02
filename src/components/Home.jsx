@@ -19,7 +19,7 @@ function Home() {
             <br />
             ajenda app.
           </p>
-          <Link to="/" className="text-xl p-3 m-4 lg:my-0 hover:bg-gray-600 text-gray-100 bg-orange-700 rounded-md shadow-md">
+          <Link to="/signup" className="text-xl p-3 m-4 lg:my-0 hover:bg-gray-600 text-gray-100 bg-orange-700 rounded-md shadow-md">
             Get Started for Free
           </Link>
           <img className="relative top-10 md:top-20 rounded-xl border border-gray-400 w-4/5 lg:w-3/4" src={heroImg} alt="hero" />
