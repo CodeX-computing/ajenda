@@ -17,14 +17,14 @@ function Navigation() {
       <Link to="/">
         <img src={logo} alt="logo" className="logo h-16" />
       </Link>
-      <ul className={`${isOpened ? 'translate-x-0' : 'translate-x-full'} duration-300 flex flex-col absolute h-screen w-full bg-gray-800 lg:bg-gray-700/0 backdrop-blur-50 text-white lg:text-gray-900 p-4 pl-32 pt-20 lg:pt-4 top-0 bottom-10 right-0 rounded-bl-full lg:rounded-none justify-start lg:justify-end items-start lg:flex-row lg:translate-x-0 z-10`}>
+      <ul className={`${isOpened ? 'translate-x-0' : 'translate-x-full'} duration-300 flex flex-col absolute h-screen bg-gray-800 lg:bg-gray-700/0 backdrop-blur-50 text-white lg:text-gray-900 lg:p-4 p-20 pt-20 lg:pt-4 top-0 bottom-10 right-0 rounded-bl-full lg:rounded-none justify-start lg:justify-end items-start lg:flex-row lg:translate-x-0 z-10`}>
         <li className="text-xl p-2 mx-1 my-1 lg:my-0 hover:bg-gray-600 lg:hover:bg-gray-200 rounded-md">
           <Link to="/features" onClick={() => toggleMenu(!isOpened)}>
             Features
           </Link>
         </li>
         <li className="text-xl p-2 mx-1 my-1 lg:my-0  hover:bg-gray-600 lg:hover:bg-gray-200 rounded-md">
-          <Link to="/tutorial" onClick={() => toggleMenu(!isOpened)}>
+          <Link to="/how" onClick={() => toggleMenu(!isOpened)}>
             How it works
           </Link>
         </li>
