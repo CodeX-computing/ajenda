@@ -2,7 +2,12 @@
 module.exports = {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        loginBg: "url('/src/assets/img/todo.webp')",
+        heroBg: "url('/src/assets/img/heroBg.webp')",
+      },
+    },
   },
   plugins: [],
 };
