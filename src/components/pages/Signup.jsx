@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import logo from '../logo1.png';
+import logo from '../../logo1.png';
 
 function Signup() {
   const handlSubmit = (e) => {

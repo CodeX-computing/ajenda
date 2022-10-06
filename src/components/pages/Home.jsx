@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import heroImg from '../assets/img/hero.webp';
+import heroImg from '../../assets/img/hero.webp';
 
 function Home() {
   return (
