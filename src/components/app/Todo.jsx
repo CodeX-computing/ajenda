@@ -1,11 +1,10 @@
 import React from 'react';
-import Ajenda from '../Ajenda';
+// import Ajenda from '../pages/Ajenda';
 
 function Todo() {
   return (
     <div className="w-screen h-screen bg-heroBg bg-cover">
       <div className="bg-gradient-to-b from-transparent to-white backdrop-blur-xl w-full h-full flex flex-col justify-start items-center pt-32">
-        <Ajenda />
         <div className="w-5/6 bg-gray-500/50 p-4 rounded-xl shadow-xl shadow-gray-500/70 border border-gray-500">
           <h1 className="text-4xl font-bold m-4">Todo</h1>
           <input className="w-full p-3 shadow-xl shadow-gray-700 outline-0 shadow-inner rounded-xl text-gray-900 hover:bg-gray-300 focus:bg-gray-300 bg-gray-600/50" placeholder="Create your todo task!" />
