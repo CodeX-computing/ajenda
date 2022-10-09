@@ -27,7 +27,6 @@ function Todo() {
 
   const handleComplete = (e) => {
     const index = e.target.id - 1;
-    console.log(todos[index].completed);
     if (todos[index].completed === false) {
       todos[index].completed = true;
       e.target.style.backgroundColor = 'green';
