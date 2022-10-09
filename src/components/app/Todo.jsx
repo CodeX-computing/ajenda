@@ -2,6 +2,50 @@ import React from 'react';
 import { AiOutlineEnter } from 'react-icons/ai';
 
 function Todo() {
+  const todos = [
+    {
+      id: 1,
+      title: 'Buy coffee',
+      completed: false,
+    },
+    {
+      id: 2,
+      title: 'Build my app!',
+      completed: true,
+    },
+    {
+      id: 3,
+      title: 'Go to the gym',
+      completed: false,
+    },
+  ];
+
+  const handleComplete = (e) => {
+    const index = e.target.id - 1;
+    console.log(todos[index].completed);
+    if (todos[index].completed === false) {
+      todos[index].completed = true;
+      e.target.style.backgroundColor = 'green';
+      e.target.nextSibling.style.textDecoration = 'line-through';
+    } else {
+      todos[index].completed = false;
+      e.target.style.backgroundColor = 'white';
+      e.target.nextSibling.style.textDecoration = 'none';
+    }
+  };
+
+  const todoList = todos.map((todo) => (
+    <div key={todo.id} className="flex w-full px-2 py-4 border-b">
+      <label htmlFor="todo" className="flex items-center">
+        <input type="checkbox" id="todo" className="hidden" />
+        <button id={todo.id} type="button" className={`${todo.completed ? 'bg-green-700' : 'bg-gray-100'} w-6 h-6 flex items-center justify-center rounded-full border-2 border-gray-500 mr-2 shadow-gray-500 shadow-inner`} onClick={(e) => handleComplete(e)}>
+          <p className="text-2xl text-gray-500 hidden">✓</p>
+        </button>
+        <p className={`${todo.completed ? 'line-through' : 'no-line-through'} text-gray-900`}>{todo.title}</p>
+      </label>
+    </div>
+  ));
+
   return (
     <div className="w-screen h-screen">
       <div className="bg-gradient-to-b from-transparent to-gray-200 backdrop-blur-xl w-full h-full flex flex-col justify-start items-center pt-32">
@@ -13,15 +57,7 @@ function Todo() {
               <AiOutlineEnter className="text-2xl text-" />
             </button>
           </div>
-          <div className="flex w-full px-2 py-4 border-b">
-            <input type="checkbox" className="p-4 bg-gary-300" />
-            <p className="ml-2">Build my app!</p>
-          </div>
-          <div className="flex w-full px-2 py-4 border-b">
-            <input type="checkbox" />
-            <p className="ml-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis tempore nesciunt nam alias repellendus numquam dolore doloribus esse delectus quos, ipsa eos odio. Sequi nam iusto, quam cum ipsa sunt.</p>
-            <div className="ml-2 text-xl font-bold text-red-800 bg-gray-400 self-center px-2 rounded-full pointer">X</div>
-          </div>
+          {todoList}
         </div>
       </div>
     </div>
