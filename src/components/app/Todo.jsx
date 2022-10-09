@@ -18,6 +18,11 @@ function Todo() {
       title: 'Go to the gym',
       completed: false,
     },
+    {
+      id: 4,
+      title: 'Learn Go language',
+      completed: false,
+    },
   ];
 
   const handleComplete = (e) => {
@@ -47,8 +52,8 @@ function Todo() {
   ));
 
   return (
-    <div className="w-screen h-screen">
-      <div className="bg-gradient-to-b from-transparent to-gray-200 backdrop-blur-xl w-full h-full flex flex-col justify-start items-center pt-32">
+    <div className="w-screen max-h-fil">
+      <div className="bg-gradient-to-b from-transparent to-gray-200 backdrop-blur-xl w-full h-full flex flex-col justify-start items-center py-32 lg:py-60 lg:pb-96">
         <div className="w-5/6 bg-gray-500/50 p-4 rounded-xl shadow-xl shadow-gray-500/70 border border-gray-500">
           <h1 className="text-4xl font-bold m-4 hidden">Todo</h1>
           <div className="flex justify-between items-center">

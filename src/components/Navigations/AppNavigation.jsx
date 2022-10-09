@@ -24,8 +24,13 @@ function AppNavigation() {
             <img src={logo} alt="logo" className="logo h-10" />
           </Link>
         </div>
+        <div className="flex items-center justify-end px-4 w-full">
+          <button type="button" className=" rounded-full border-2 border-gray-900 pointer">
+            <img src="https://avatars.githubusercontent.com/u/25227022?v=4" alt="avatar" className="h-9 w-9 rounded-full border-2 border-gray-900 pointer" />
+          </button>
+        </div>
       </nav>
-      <nav className={`z-10 fixed md:relative py-4 flex flex-col justify-between items-start bg-gray-200 md:bg-gray-200/70 shadow-2xl shadow-gray-100 duration-500 lg:${isOpened ? 'left-0 w-56' : '-left-full w-0'} ${isOpened ? 'left-0 w-56' : '-left-full w-0'} `}>
+      <nav className={`z-10 fixed bottom-0 top-0 h-fil md:relative py-4 flex flex-col justify-between items-start bg-gray-200 md:bg-gray-200/70 shadow-2xl shadow-gray-100 duration-500  ${isOpened ? 'left-0 w-56' : '-left-full w-0'} `}>
         <div className="flex flex-col items-start mt-10">
           <Link to="/app/todo" className="text-xl py-1 mx-10 pointer">
             Todo

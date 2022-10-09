@@ -21,7 +21,7 @@ function LoginRoutes() {
       <Outlet />
     </>
   ) : (
-    <Navigate to="/app" />
+    <Navigate to="/app/todo" />
   );
 }
 
