@@ -12,6 +12,7 @@ import Signin from './components/pages/Signin';
 import Signup from './components/pages/Signup';
 import Todo from './components/app/Todo';
 import Goals from './components/app/Goals';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
         </Route>
         <Route path="*" element={<NotFound404 />} />
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 }

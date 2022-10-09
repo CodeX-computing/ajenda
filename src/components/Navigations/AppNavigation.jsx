@@ -15,7 +15,7 @@ function AppNavigation() {
   };
   return (
     <>
-      <nav className="z-10 fixed top-0 h-10 w-full flex justify-between items-center bg-orange-800 shadow-2xl shadow-gray-100">
+      <nav className="z-20 fixed top-0 h-10 w-full flex justify-between items-center bg-orange-800 shadow-2xl shadow-gray-100">
         <div className="flex items-center">
           <button type="button" onClick={() => handleMenu()} className="text-2xl text-gray-100 hover:text-gray-200 p-2 mx-2 rounded-2xl pointer">
             <IoMenu className="text-gray-100 font-bold text" />
@@ -25,7 +25,7 @@ function AppNavigation() {
           </Link>
         </div>
       </nav>
-      <nav className={`z-10 fixed md:relative py-4 top-10 h-screen flex flex-col justify-between items-start bg-gray-200 shadow-2xl shadow-gray-100 duration-500 md:${!isOpened ? '-left-full' : 'left-0'} ${isOpened ? 'left-0 w-56' : '-left-full w-0'} `}>
+      <nav className={`z-10 fixed md:relative py-4 flex flex-col justify-between items-start bg-gray-200 md:bg-gray-200/70 shadow-2xl shadow-gray-100 duration-500 lg:${isOpened ? 'left-0 w-56' : '-left-full w-0'} ${isOpened ? 'left-0 w-56' : '-left-full w-0'} `}>
         <div className="flex flex-col items-start mt-10">
           <Link to="/app/todo" className="text-xl py-1 mx-10 pointer">
             Todo
