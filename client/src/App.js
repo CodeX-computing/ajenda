@@ -13,6 +13,7 @@ import Signup from './components/pages/Signup';
 import Todo from './components/app/Todo';
 import Goals from './components/app/Goals';
 import Footer from './components/Footer';
+import Planner from './components/app/Planner';
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
         <Route element={<ProtectedRoutes />}>
           <Route exact path="/app/todo" element={<Todo />} />
           <Route exact path="/app/goals" element={<Goals />} />
+          <Route exact path="/app/planner" element={<Planner />} />
         </Route>
         <Route path="*" element={<NotFound404 />} />
       </Routes>

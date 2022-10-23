@@ -33,7 +33,7 @@ function AppNavigation() {
           </button>
         </div>
       </nav>
-      <nav className={`z-10 fixed bottom-0 top-0 h-fil md:relative py-4 flex flex-col justify-between items-start bg-gray-200 md:bg-gray-200/70 shadow-2xl shadow-gray-100 duration-500  ${isOpened ? 'left-0 w-56' : '-left-full w-0'} `}>
+      <nav className={`md:pb-52 z-10 fixed bottom-0 top-0 h-fil md:relative py-4 flex flex-col justify-between items-start bg-gray-200 md:bg-gray-200/70 shadow-2xl shadow-gray-100 duration-500  ${isOpened ? 'left-0 w-56' : '-left-full w-0'} `}>
         <div className="flex flex-col items-start mt-20">
           <Link to="/app/todo" className="text-xl py-1 mx-10 pointer">
             <FcTodoList className="inline mr-1" />
