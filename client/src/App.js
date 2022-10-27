@@ -14,6 +14,7 @@ import Todo from './components/app/Todo';
 import Goals from './components/app/Goals';
 import Footer from './components/Footer';
 import Planner from './components/app/Planner';
+import Notes from './components/app/Notes';
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
           <Route exact path="/app/todo" element={<Todo />} />
           <Route exact path="/app/goals" element={<Goals />} />
           <Route exact path="/app/planner" element={<Planner />} />
+          <Route exact path="/app/notes" element={<Notes />} />
         </Route>
         <Route path="*" element={<NotFound404 />} />
       </Routes>

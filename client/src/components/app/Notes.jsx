@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Planner() {
+function Notes() {
   return (
     <div className="w-screen md:mb-32">
       <div className="bg-gradient-to-b from-transparent to-gray-200 backdrop-blur-xl w-full h-full flex justify-center items-center py-32 lg:py-60 lg:pb-96">
@@ -15,4 +15,4 @@ function Planner() {
   );
 }
 
-export default Planner;
+export default Notes;
