@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FiLogOut } from 'react-icons/fi';
 import {
-  FcTodoList, FcPlanner, FcInspection, FcDocument, FcMenu,
+  FcTodoList, FcPlanner, FcInspection, FcDocument,
 } from 'react-icons/fc';
+import { RiMenuUnfoldLine, RiMenuFoldLine } from 'react-icons/ri';
 import logo from '../../logo.png';
 
 function AppNavigation() {
@@ -18,23 +19,24 @@ function AppNavigation() {
   };
   return (
     <>
-      <nav className="z-20 fixed top-0 h-10 w-full flex justify-between items-center bg-orange-800 shadow-2xl shadow-gray-100">
+      <nav className="z-20 fixed top-0 h-10 w-full flex justify-between items-center bg-orange-800 ">
         <div className="flex items-center">
           <button type="button" onClick={() => handleMenu()} className="text-2xl text-gray-100 hover:text-gray-200 p-2 mx-2 rounded-2xl pointer">
-            <FcMenu className="text-gray-100 bg-orange-200 rounded " />
+            <RiMenuUnfoldLine className={`${isOpened ? 'hidden' : 'block'} text-gray-100 hover:bg-orange-200/10 rounded`} />
+            <RiMenuFoldLine className={`${isOpened ? 'block' : 'hidden'} text-gray-100 hover:bg-orange-200/10 rounded`} />
           </button>
-          <Link to="/">
-            <img src={logo} alt="logo" className="logo h-10" />
-          </Link>
         </div>
         <div className="flex items-center justify-end px-4 w-full">
           <button type="button" className=" rounded-full border-2 border-gray-900 pointer">
-            <img src="https://avatars.githubusercontent.com/u/25227022?v=4" alt="avatar" className="h-9 w-9 rounded-full border-2 border-gray-900 pointer" />
+            <img src="https://avatars.githubusercontent.com/u/25227022?v=4" alt="avatar" className="h-7 w-7 rounded-full pointer" />
           </button>
         </div>
       </nav>
-      <nav className={`md:pb-52 z-10 fixed bottom-0 top-0 h-fil md:relative py-4 flex flex-col justify-between items-start bg-gray-200 md:bg-gray-200/70 shadow-2xl shadow-gray-100 duration-500  ${isOpened ? 'left-0 w-56' : '-left-full w-0'} `}>
-        <div className="flex flex-col items-start mt-20">
+      <nav className={`md:pb-52 z-10 fixed bottom-0 top-0 h-fil md:relative py-4 flex flex-col justify-between items-start bg-gray-200 md:bg-gray-200/70 shadow-2xl shadow-gray-100 duration-300  ${isOpened ? 'left-0 w-56' : '-left-full w-0'} `}>
+        <div className="flex flex-col items-start mt-10">
+          <Link to="/">
+            <img src={logo} alt="logo" className="logo h-15 mb-4" />
+          </Link>
           <Link to="/app/todo" className="text-xl py-1 mx-10 pointer">
             <FcTodoList className="inline mr-1" />
             Todo
