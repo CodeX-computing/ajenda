@@ -43,7 +43,6 @@ function Goals() {
 
   const handleComplete = (e) => {
     const index = e.target.id - 1;
-    console.log(goals[index].completed);
     if (goals[index].completed === false) {
       goals[index].completed = true;
       e.target.style.backgroundColor = 'green';
