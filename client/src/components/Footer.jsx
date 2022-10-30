@@ -2,8 +2,8 @@ import React from 'react';
 
 function Footer() {
   return (
-    <footer className="z-20 sm:relative md:fixed bottom-0 flex flex-col bg-gradient-to-b from-white to-gray-400 p-4 w-screen text-sm">
-      <div className="pt-20" />
+    <footer className="z-20 sm:relative md:fixed bottom-0 flex flex-col bg-gradient-to-b from-white to-gray-400 p-2 w-screen text-sm">
+      <div className="pt-5" />
       <div className="flex justify-between mr-2">
         <div>
           <a className="ml-2 pr-2 text-md border-r border-gray-700 hover:text-orange-800 hover:underline" href="#privacy" target="_blank" rel="noreferrer">
