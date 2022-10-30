@@ -5,7 +5,7 @@
 
 > ajenda is a Todo List & task manager tool to track your daily and weakly goals, Setup todo list and Track your progress over time.
 
-![screenshot](./public/screenshot.png)
+![screenshot](./client/public/screenshot.png)
 
 Additional description about the project and its features.
 
