@@ -1,5 +1,5 @@
-export const setLocalStorage = (todos) => {
-  localStorage.setItem('todos', JSON.stringify(todos));
+export const setLocalStorage = (storage, todos) => {
+  localStorage.setItem(storage, JSON.stringify(todos));
 };
 
-export const getLocalStorage = () => JSON.parse(localStorage.getItem('todos'));
+export const getLocalStorage = (storage) => JSON.parse(localStorage.getItem(storage));

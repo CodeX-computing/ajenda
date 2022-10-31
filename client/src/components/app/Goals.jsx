@@ -1,104 +1,62 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { AiOutlineEnter } from 'react-icons/ai';
+import { getLocalStorage, setLocalStorage } from './localStorage';
 
 function Goals() {
-  const goals = [
-    {
-      id: 1,
-      title: 'Buy coffee',
-      mon: true,
-      tue: true,
-      wed: true,
-      thu: true,
-      fri: true,
-      sat: true,
-      sun: true,
-      done: true,
-    },
-    {
-      id: 2,
-      title: 'Build my app!',
-      mon: false,
-      tue: false,
-      wed: false,
-      thu: false,
-      fri: true,
-      sat: false,
-      sun: false,
-      done: false,
-    },
-    {
-      id: 3,
-      title: 'Build my app!',
-      mon: false,
-      tue: false,
-      wed: true,
-      thu: false,
-      fri: false,
-      sat: false,
-      sun: false,
-      done: false,
-    },
-  ];
+  const [goals, setGoals] = useState([]);
 
-  const handleComplete = (e) => {
-    const index = e.target.id - 1;
-    if (goals[index].completed === false) {
-      goals[index].completed = true;
-      e.target.style.backgroundColor = 'green';
-      // e.target.nextSibling.style.textDecoration = 'line-through';
-    } else {
-      goals[index].completed = false;
-      e.target.style.backgroundColor = 'white';
-      // e.target.nextSibling.style.textDecoration = 'none';
+  const addGoal = (e, goals) => {
+    if (e.key === 'Enter') {
+      const goal = {
+        id: goals ? goals.length + 1 : 1,
+        title: e.target.value.trim(),
+        mon: false,
+        tue: false,
+        wed: false,
+        thu: false,
+        fri: false,
+        sat: false,
+        sun: false,
+        done: false,
+      };
+      setGoals([...goals, goal]);
+      setLocalStorage('goals', [...goals, goal]);
+      e.target.value = '';
     }
   };
 
-  const GoalsList = goals.map((goal) => (
-    <tr key={goal.id}>
-      <td className="border-b border-r border-gray-300 p-2">{goal.title}</td>
-      <td className="border-b border-r border-gray-300 p-2 text-center">
-        <button id={goal.id} type="button" className={`${goal.mon ? 'bg-green-700' : 'bg-gray-100'} w-6 h-6 rounded-full border-2 border-gray-500 mr-2 shadow-gray-500 shadow-inner`} onClick={(e) => handleComplete(e)}>
-          <p className="text-2xl text-gray-500 hidden">✓</p>
-        </button>
-      </td>
-      <td className="border-b border-r border-gray-300 p-2 text-center">
-        <button id={goal.id} type="button" className={`${goal.tue ? 'bg-green-700' : 'bg-gray-100'} w-6 h-6 rounded-full border-2 border-gray-500 mr-2 shadow-gray-500 shadow-inner`} onClick={(e) => handleComplete(e)}>
-          <p className="text-2xl text-gray-500 hidden">✓</p>
-        </button>
-      </td>
-      <td className="border-b border-r border-gray-300 p-2 text-center">
-        <button id={goal.id} type="button" className={`${goal.wed ? 'bg-green-700' : 'bg-gray-100'} w-6 h-6 rounded-full border-2 border-gray-500 mr-2 shadow-gray-500 shadow-inner`} onClick={(e) => handleComplete(e)}>
-          <p className="text-2xl text-gray-500 hidden">✓</p>
-        </button>
-      </td>
-      <td className="border-b border-r border-gray-300 p-2 text-center">
-        <button id={goal.id} type="button" className={`${goal.thu ? 'bg-green-700' : 'bg-gray-100'} w-6 h-6 rounded-full border-2 border-gray-500 mr-2 shadow-gray-500 shadow-inner`} onClick={(e) => handleComplete(e)}>
-          <p className="text-2xl text-gray-500 hidden">✓</p>
-        </button>
-      </td>
-      <td className="border-b border-r border-gray-300 p-2 text-center">
-        <button id={goal.id} type="button" className={`${goal.fri ? 'bg-green-700' : 'bg-gray-100'} w-6 h-6 rounded-full border-2 border-gray-500 mr-2 shadow-gray-500 shadow-inner`} onClick={(e) => handleComplete(e)}>
-          <p className="text-2xl text-gray-500 hidden">✓</p>
-        </button>
-      </td>
-      <td className="border-b border-r border-gray-300 p-2 text-center">
-        <button id={goal.id} type="button" className={`${goal.sat ? 'bg-green-700' : 'bg-gray-100'} w-6 h-6 rounded-full border-2 border-gray-500 mr-2 shadow-gray-500 shadow-inner`} onClick={(e) => handleComplete(e)}>
-          <p className="text-2xl text-gray-500 hidden">✓</p>
-        </button>
-      </td>
-      <td className="border-b border-r border-gray-300 p-2 text-center">
-        <button id={goal.id} type="button" className={`${goal.sun ? 'bg-green-700' : 'bg-gray-100'} w-6 h-6 rounded-full border-2 border-gray-500 mr-2 shadow-gray-500 shadow-inner`} onClick={(e) => handleComplete(e)}>
-          <p className="text-2xl text-gray-500 hidden">✓</p>
-        </button>
-      </td>
-      <td className="border-b border-r border-gray-300 text-center">
-        <button id={goal.id} type="button" className={`${goal.done ? 'bg-green-700' : 'bg-gray-100'} w-6 h-6 rounded-full border-2 border-gray-500 mr-2 shadow-gray-500 shadow-inner`} onClick={(e) => handleComplete(e)}>
-          <p className="text-2xl text-gray-500 hidden">✓</p>
-        </button>
-      </td>
-    </tr>
-  ));
+  useEffect(() => {
+    if (getLocalStorage('goals')) {
+      setGoals(getLocalStorage('goals'));
+    }
+  }, []);
+
+  const handleComplete = (e, day) => {
+    // For now I am using this approch to complete the goals
+    // but I will change it later if I found a better way
+    const index = e.target.id - 1;
+    if (goals[index][day] === false) {
+      goals[index][day] = true;
+      setLocalStorage('goals', goals);
+      e.target.style.backgroundColor = 'green';
+    } else {
+      goals[index][day] = false;
+      setLocalStorage('goals', goals);
+      e.target.style.backgroundColor = 'white';
+    }
+    if (goals[index].mon && goals[index].tue
+      && goals[index].wed && goals[index].thu
+      && goals[index].fri && goals[index].sat
+      && goals[index].sun) {
+      goals[index].done = true;
+      e.target.parentNode.parentNode.parentNode.firstChild.style.textDecoration = 'line-through';
+      setLocalStorage('goals', goals);
+    } else {
+      goals[index].done = false;
+      e.target.parentNode.parentNode.parentNode.firstChild.style.textDecoration = 'none';
+      setLocalStorage('goals', goals);
+    }
+  };
 
   return (
     <div className="w-screen md:mb-16">
@@ -106,7 +64,7 @@ function Goals() {
         <div className="w-5/6 bg-gray-500/50 p-4 rounded-xl shadow-xl shadow-gray-500/70 border border-gray-500">
           <h1 className="text-4xl font-bold m-4 hidden">Todo</h1>
           <div className="flex justify-between items-center">
-            <input className="w-full p-3 shadow-xl shadow-gray-700 outline-0 shadow-inner rounded-tl-xl rounded-bl-xl text-gray-900 hover:bg-gray-300 focus:bg-gray-300 bg-gray-600/50" placeholder="Create a new Goal!" />
+            <input className="w-full p-3 shadow-xl shadow-gray-700 outline-0 shadow-inner rounded-tl-xl rounded-bl-xl text-gray-900 hover:bg-gray-300 focus:bg-gray-300 bg-gray-600/50" placeholder="Create a new Goal!" onKeyUp={(e) => addGoal(e, goals)} />
             <button type="button" className="p-3 rounded-tr-xl rounded-br-xl bg-gray-600/50 outline-0 shadow-inner text-gray-900">
               <AiOutlineEnter className="text-2xl text-" />
             </button>
@@ -126,7 +84,53 @@ function Goals() {
                   <th className="border-b border-r border-gray-300 p-2">Done</th>
                 </tr>
               </thead>
-              <tbody>{GoalsList}</tbody>
+              <tbody>
+                {goals.map((goal) => (
+                  <tr key={goal.id}>
+                    <td className="border-b border-r border-gray-300 p-2">{goal.title}</td>
+                    <td className="border-b border-r border-gray-300 p-2 text-center">
+                      <button id={goal.id} type="button" className={`${goal.mon ? 'bg-green-700' : 'bg-gray-100'} w-6 h-6 rounded-full border-2 border-gray-500 mr-2 shadow-gray-500 shadow-inner`} onClick={(e) => handleComplete(e, 'mon')}>
+                        <p className="text-2xl text-gray-500 hidden">✓</p>
+                      </button>
+                    </td>
+                    <td className="border-b border-r border-gray-300 p-2 text-center">
+                      <button id={goal.id} type="button" className={`${goal.tue ? 'bg-green-700' : 'bg-gray-100'} w-6 h-6 rounded-full border-2 border-gray-500 mr-2 shadow-gray-500 shadow-inner`} onClick={(e) => handleComplete(e, 'tue')}>
+                        <p className="text-2xl text-gray-500 hidden">✓</p>
+                      </button>
+                    </td>
+                    <td className="border-b border-r border-gray-300 p-2 text-center">
+                      <button id={goal.id} type="button" className={`${goal.wed ? 'bg-green-700' : 'bg-gray-100'} w-6 h-6 rounded-full border-2 border-gray-500 mr-2 shadow-gray-500 shadow-inner`} onClick={(e) => handleComplete(e, 'wed')}>
+                        <p className="text-2xl text-gray-500 hidden">✓</p>
+                      </button>
+                    </td>
+                    <td className="border-b border-r border-gray-300 p-2 text-center">
+                      <button id={goal.id} type="button" className={`${goal.thu ? 'bg-green-700' : 'bg-gray-100'} w-6 h-6 rounded-full border-2 border-gray-500 mr-2 shadow-gray-500 shadow-inner`} onClick={(e) => handleComplete(e, 'thu')}>
+                        <p className="text-2xl text-gray-500 hidden">✓</p>
+                      </button>
+                    </td>
+                    <td className="border-b border-r border-gray-300 p-2 text-center">
+                      <button id={goal.id} type="button" className={`${goal.fri ? 'bg-green-700' : 'bg-gray-100'} w-6 h-6 rounded-full border-2 border-gray-500 mr-2 shadow-gray-500 shadow-inner`} onClick={(e) => handleComplete(e, 'fri')}>
+                        <p className="text-2xl text-gray-500 hidden">✓</p>
+                      </button>
+                    </td>
+                    <td className="border-b border-r border-gray-300 p-2 text-center">
+                      <button id={goal.id} type="button" className={`${goal.sat ? 'bg-green-700' : 'bg-gray-100'} w-6 h-6 rounded-full border-2 border-gray-500 mr-2 shadow-gray-500 shadow-inner`} onClick={(e) => handleComplete(e, 'sat')}>
+                        <p className="text-2xl text-gray-500 hidden">✓</p>
+                      </button>
+                    </td>
+                    <td className="border-b border-r border-gray-300 p-2 text-center">
+                      <button id={goal.id} type="button" className={`${goal.sun ? 'bg-green-700' : 'bg-gray-100'} w-6 h-6 rounded-full border-2 border-gray-500 mr-2 shadow-gray-500 shadow-inner`} onClick={(e) => handleComplete(e, 'sun')}>
+                        <p className="text-2xl text-gray-500 hidden">✓</p>
+                      </button>
+                    </td>
+                    <td className="border-b border-r border-gray-300 text-center">
+                      <button id={goal.id} type="button" className={`${goal.done ? 'bg-green-700' : 'bg-gray-100'} w-6 h-6 rounded-full border-2 border-gray-500 mr-2 shadow-gray-500 shadow-inner`} onClick={(e) => handleComplete(e, 'done')}>
+                        <p className="text-2xl text-gray-500 hidden">✓</p>
+                      </button>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
             </table>
           </div>
         </div>
