@@ -13,14 +13,14 @@ function Todo() {
         completed: false,
       };
       setTodos([...todos, todo]);
-      setLocalStorage([...todos, todo]);
+      setLocalStorage('todos', [...todos, todo]);
       e.target.value = '';
     }
   };
 
   useEffect(() => {
-    if (getLocalStorage()) {
-      setTodos(getLocalStorage());
+    if (getLocalStorage('todos')) {
+      setTodos(getLocalStorage('todos'));
     }
   }, []);
 
@@ -28,18 +28,16 @@ function Todo() {
     const index = e.target.id - 1;
     if (todos[index].completed === false) {
       todos[index].completed = true;
-      setLocalStorage(todos);
+      setLocalStorage('todos', todos);
       e.target.style.backgroundColor = 'green';
       e.target.nextSibling.style.textDecoration = 'line-through';
     } else {
       todos[index].completed = false;
-      setLocalStorage(todos);
+      setLocalStorage('todos', todos);
       e.target.style.backgroundColor = 'white';
       e.target.nextSibling.style.textDecoration = 'none';
     }
   };
-
-  // const todoList =
 
   return (
     <div className="w-screen md:mb-16">
