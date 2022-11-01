@@ -1,20 +1,31 @@
 import React, { useEffect, useState } from 'react';
-import { AiOutlineEnter } from 'react-icons/ai';
 import { getLocalStorage, setLocalStorage } from './localStorage';
 
 function Todo() {
   const [todos, setTodos] = useState([]);
 
   const addTodo = (e, todos) => {
-    if (e.key === 'Enter') {
+    if (e.target.tagName === 'INPUT') {
+      if (e.key === 'Enter' && e.target.value.trim() !== '') {
+        const todo = {
+          id: todos ? todos.length + 1 : 1,
+          title: e.target.value.trim(),
+          completed: false,
+        };
+        setTodos([...todos, todo]);
+        setLocalStorage('todos', [...todos, todo]);
+        e.target.value = '';
+      }
+    }
+    if (e.target.tagName === 'BUTTON' && e.target.previousSibling.value.trim() !== '') {
       const todo = {
         id: todos ? todos.length + 1 : 1,
-        title: e.target.value.trim(),
+        title: e.target.previousSibling.value.trim(),
         completed: false,
       };
       setTodos([...todos, todo]);
       setLocalStorage('todos', [...todos, todo]);
-      e.target.value = '';
+      e.target.previousSibling.value = '';
     }
   };
 
@@ -46,8 +57,8 @@ function Todo() {
           <h1 className="text-4xl font-bold m-4 hidden">Todo</h1>
           <div className="flex justify-between items-center">
             <input className="w-full p-3 shadow-xl shadow-gray-700 outline-0 shadow-inner rounded-tl-xl rounded-bl-xl text-gray-900 hover:bg-gray-300 focus:bg-gray-300 bg-gray-600/50" placeholder="Create your todo task!" onKeyUp={(e) => addTodo(e, todos)} />
-            <button type="button" className="p-3 rounded-tr-xl rounded-br-xl bg-gray-600/50 outline-0 shadow-inner text-gray-900">
-              <AiOutlineEnter className="text-2xl text-" />
+            <button type="button" className="py-1 px-2 text-4xl rounded-tr-xl rounded-br-xl bg-gray-600/50 outline-0 shadow-inner text-gray-900" onClick={(e) => addTodo(e, todos)}>
+              &#8629;
             </button>
           </div>
           {todos.map((todo) => (
