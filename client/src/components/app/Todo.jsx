@@ -65,7 +65,7 @@ function Todo() {
             <div key={todo.id} className="flex w-full px-2 py-4 border-b">
               <label htmlFor="todo" className="flex items-center">
                 <input type="checkbox" id="todo" className="hidden" />
-                <button id={todo.id} type="button" className={`${todo.completed ? 'bg-green-700' : 'bg-gray-100'} w-6 h-6 flex items-center justify-center rounded-full border-2 border-gray-500 mr-2 shadow-gray-500 shadow-inner`} onClick={(e) => handleComplete(e)}>
+                <button id={todo.id} type="button" className={`${todo.completed ? 'bg-green-700' : 'bg-gray-100'} p-3 flex items-center justify-center rounded-full border-2 border-gray-500 mr-2 shadow-gray-500 shadow-inner`} onClick={(e) => handleComplete(e)}>
                   <p className="text-2xl text-gray-500 hidden">✓</p>
                 </button>
                 <p className={`${todo.completed ? 'line-through' : 'no-line-through'} text-gray-900`}>{todo.title}</p>
