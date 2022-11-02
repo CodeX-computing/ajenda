@@ -57,7 +57,7 @@ function Todo() {
           <h1 className="text-4xl font-bold m-4 hidden">Todo</h1>
           <div className="flex justify-between items-center">
             <input className="w-full p-3 shadow-xl shadow-gray-700 outline-0 shadow-inner rounded-tl-xl rounded-bl-xl text-gray-900 hover:bg-gray-300 focus:bg-gray-300 bg-gray-600/50" placeholder="Create your todo task!" onKeyUp={(e) => addTodo(e, todos)} />
-            <button type="button" className="py-1 px-2 text-4xl rounded-tr-xl rounded-br-xl bg-gray-600/50 outline-0 shadow-inner text-gray-900" onClick={(e) => addTodo(e, todos)}>
+            <button type="button" className="flex justify-center items-center py-1 px-2 text-4xl rounded-tr-xl rounded-br-xl bg-gray-600/50 outline-0 shadow-inner text-gray-900" onClick={(e) => addTodo(e, todos)}>
               &#8629;
             </button>
           </div>
