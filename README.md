@@ -1,7 +1,7 @@
 <center>
 <h1>ajenda<h1>
-<h2>Todo list & Task manager app<h2>
 <img src="./client/public/logo1.png" alt="ajenda app" />
+<h2>Todo list & Task manager app<h2>
 </center>
 <p><i>ajenda is a Todo List & task manager tool to track your daily and weakly goals, Setup todo list and Track your progress over time.</i></p>
 <img src="./client/public/screenshot.png" alt="ajenda app screenshout" />
