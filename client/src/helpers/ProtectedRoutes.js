@@ -2,7 +2,7 @@ import { Navigate, Outlet } from 'react-router-dom';
 import AppNavigation from '../components/Navigations/AppNavigation';
 
 const useAuth = () => {
-  const loggedIn = true;
+  const loggedIn = false;
   // if (localStorage.getItem('token')) {
   //   loggedIn = true;
   // } else {
