@@ -30,8 +30,8 @@ function Home() {
           {/* Section one */}
           <section className="flex flex-col lg:flex-row lg:justify-between justify-center items-center m-4 lg:m-10">
             <article className="md:w-1/2 lg:w-1/3 mt-10">
-              <h2 className="p-2 text-3xl font-bold text-center lg:text-left">Organize your work</h2>
-              <p className="p-2 text-md text-center lg:text-left">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eligendi accusamus in consequatur dolores enim praesentium minus repudiandae exercitationem, magnam ipsum voluptas distinctio iusto doloremque officiis magni voluptate. Eum, et. Porro?</p>
+              <h2 className="p-2 text-3xl font-bold text-center lg:text-left">Your All-In-One Todo List and Task Manager</h2>
+              <p className="p-2 text-md text-center lg:text-left">In Ajenda, you can easily keep track of all your tasks and to-do items in one place. With our intuitive interface, you can quickly add new tasks, set deadlines, and mark items as complete.</p>
             </article>
             <article className="md:w-1/2 lg:w-1/3 mt-10">
               <img className="rounded-xl border" src={heroImg} alt="home one" />
@@ -40,8 +40,8 @@ function Home() {
           {/* Section two */}
           <section className="flex flex-col lg:flex-row-reverse lg:justify-between justify-center items-center m-4 lg:m-10">
             <article className="md:w-1/2 lg:w-1/3 mt-10">
-              <h2 className="p-2 text-3xl font-bold text-center lg:text-left">Organize your work</h2>
-              <p className="p-2 text-md text-center lg:text-left">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eligendi accusamus in consequatur dolores enim praesentium minus repudiandae exercitationem, magnam ipsum voluptas distinctio iusto doloremque officiis magni voluptate. Eum, et. Porro?</p>
+              <h2 className="p-2 text-3xl font-bold text-center lg:text-left">Stay Organized with Ajenda&apos;s Planner and Agenda</h2>
+              <p className="p-2 text-md text-center lg:text-left">Ajenda&apos;s planner and agenda feature helps you stay organized and on top of your schedule. You can create daily, weekly, or monthly calendars, and add events and appointments to keep track of your time.</p>
             </article>
             <article className="md:w-1/2 lg:w-1/3 mt-10">
               <img className="rounded-xl border" src={heroImg} alt="home one" />
@@ -50,8 +50,8 @@ function Home() {
           {/* Section three */}
           <section className="flex flex-col lg:flex-row lg:justify-between justify-center items-center m-4 lg:m-10">
             <article className="md:w-1/2 lg:w-1/3 mt-10">
-              <h2 className="p-2 text-3xl font-bold text-center lg:text-left">Organize your work</h2>
-              <p className="p-2 text-md text-center lg:text-left">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eligendi accusamus in consequatur dolores enim praesentium minus repudiandae exercitationem, magnam ipsum voluptas distinctio iusto doloremque officiis magni voluptate. Eum, et. Porro?</p>
+              <h2 className="p-2 text-3xl font-bold text-center lg:text-left">Collaborate with Your Team in Ajenda</h2>
+              <p className="p-2 text-md text-center lg:text-left">Need to work on a project with your team? Ajenda makes it easy to collaborate with your coworkers or classmates. You can assign tasks to team members, leave comments and notes, and track progress all in one place.</p>
             </article>
             <article className="md:w-1/2 lg:w-1/3 mt-10">
               <img className="rounded-xl border" src={heroImg} alt="home one" />
@@ -60,8 +60,8 @@ function Home() {
           {/* Section foor */}
           <section className="flex flex-col lg:flex-row-reverse lg:justify-between justify-center items-center m-4 lg:m-10">
             <article className="md:w-1/2 lg:w-1/3 mt-10">
-              <h2 className="p-2 text-3xl font-bold text-center lg:text-left">Organize your work</h2>
-              <p className="p-2 text-md text-center lg:text-left">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eligendi accusamus in consequatur dolores enim praesentium minus repudiandae exercitationem, magnam ipsum voluptas distinctio iusto doloremque officiis magni voluptate. Eum, et. Porro?</p>
+              <h2 className="p-2 text-3xl font-bold text-center lg:text-left">Customize Ajenda to Suit Your Needs</h2>
+              <p className="p-2 text-md text-center lg:text-left">Ajenda is fully customizable to fit your unique needs. You can create multiple to-do lists for different areas of your life, set up notifications and reminders, and choose from a variety of colorful themes to make Ajenda your own.</p>
             </article>
             <article className="md:w-1/2 lg:w-1/3 mt-10">
               <img className="rounded-xl border" src={heroImg} alt="home one" />
