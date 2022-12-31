@@ -35,7 +35,12 @@
 
 # 📖 ajenda <a name="about-project"></a>
 
+
 > **ajenda** is a Todo List & task manager tool to track your daily and weakly goals, Setup todo list and Track your progress over time, It's a simple and easy to use todo list app, you can add, edit, delete and mark as completed your tasks, you can also add weakly goals, track your progress mark task as completed. The app also has a Planner feature to help you plan your day, week and month with a calendar view, and Google Calendar integration. and Notes where you can add some notes, and edite them, with the integrated text editor.
+
+<div align="center">
+  <img src="./client/public/screenshot.png" alt="screenshot" />
+</div>
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -87,6 +92,7 @@ Clone this repository to your desired folder:
 - cd ajenda
 
 # Cooming Soon
+
 <!-- ### Install
 
 Install this project with:
