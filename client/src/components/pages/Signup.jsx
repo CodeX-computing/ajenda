@@ -1,10 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../logo1.png';
+import { register } from '../../firebase';
 
 function Signup() {
   const handlSubmit = (e) => {
     e.preventDefault();
+    const email = e.target.elements[1].value;
+    const password = e.target.elements[2].value;
+    register(email, password);
+    console.log(email, password);
   };
   return (
     <div className="absolute top-0 bottom-0 left-0 right-0 flex flex-col justify-start items-center bg-loginBg bg-cover bg-center backdrop-opacity-10">

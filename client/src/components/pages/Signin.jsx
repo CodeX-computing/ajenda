@@ -1,10 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../logo1.png';
+import { login } from '../../firebase';
 
 function Signin() {
   const handlSubmit = (e) => {
     e.preventDefault();
+    const { email, password } = e.target.elements;
+    login(email, password);
   };
   return (
     <div className="absolute h-full max-h-full top-0 bottom-0 left-0 right-0 flex flex-col justify-start items-center bg-loginBg bg-cover bg-repeat bg-center backdrop-opacity-10">
