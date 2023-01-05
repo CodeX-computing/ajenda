@@ -1,7 +1,12 @@
 import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { getLocalStorage, setLocalStorage } from './localStorage';
+import { getGoalsThunk } from '../../app/goals/goals';
 
 function Goals() {
+  const goalsFromAPI = useSelector((state) => state.goals.data);
+  const dispatch = useDispatch();
+
   const [goals, setGoals] = useState([]);
 
   const addGoal = (e, goals) => {
@@ -44,8 +49,12 @@ function Goals() {
   };
 
   useEffect(() => {
+    dispatch(getGoalsThunk());
     if (getLocalStorage('goals')) {
       setGoals(getLocalStorage('goals'));
+    }
+    if (goalsFromAPI) {
+      setGoals(goalsFromAPI);
     }
   }, []);
 
@@ -62,8 +71,9 @@ function Goals() {
       setLocalStorage('goals', goals);
       e.target.style.backgroundColor = 'white';
     }
-    if (goals[index].mon && goals[index].tue && goals[index].wed && goals[index].thu
-      && goals[index].fri && goals[index].sat && goals[index].sun) {
+    if (goals[index].mon && goals[index].tue && goals[index].wed
+      && goals[index].thu && goals[index].fri && goals[index].sat
+      && goals[index].sun) {
       goals[index].done = true;
       e.target.parentNode.parentNode.parentNode.firstChild.style.textDecoration = 'line-through';
       setLocalStorage('goals', goals);
