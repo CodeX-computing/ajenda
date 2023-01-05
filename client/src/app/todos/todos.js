@@ -22,7 +22,7 @@ const initialState = {
   todos: [],
 };
 
-const todosReducer = (state = initialState, action) => {
+const todosReducer = (state = initialState, action = {}) => {
   switch (action.type) {
     case GET_TODOS: {
       return {
