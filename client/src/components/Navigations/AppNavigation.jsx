@@ -19,7 +19,7 @@ function AppNavigation() {
   };
   return (
     <>
-      <nav className="z-20 fixed top-0 h-10 w-full flex justify-between items-center bg-orange-800 ">
+      <nav className="z-20 fixed top-0 h-20 pt-10 md:h-10 md:pt-0 w-full flex justify-between items-center bg-orange-800 ">
         <div className="flex items-center">
           <button type="button" onClick={() => handleMenu()} className="text-2xl text-gray-100 hover:text-gray-200 p-2 mx-2 rounded-2xl pointer">
             <RiMenuUnfoldLine className={`${isOpened ? 'hidden' : 'block'} text-gray-100 hover:bg-orange-200/10 rounded`} />
