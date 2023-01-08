@@ -2,7 +2,7 @@ import React from 'react';
 
 function Footer() {
   return (
-    <footer className="z-20 sm:relative md:fixed bottom-0 flex flex-col bg-gradient-to-b from-white to-gray-400 p-2 w-screen text-sm">
+    <footer className="z-20 hidden md:block md:fixed bottom-0 flex flex-col bg-gradient-to-b from-white to-gray-400 p-2 w-screen text-sm">
       <div className="pt-5" />
       <div className="flex justify-between mr-2">
         <div>
